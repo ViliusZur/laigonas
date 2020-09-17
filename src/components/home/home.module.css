@@ -1,0 +1,84 @@
+.BackgroundContainer {
+  z-index: -2;
+  position: relative;
+}
+
+.Background {
+  background-image: linear-gradient(rgba(20, 33, 61, 0.2) 85%, rgba(255, 255, 255, 1)), url('/images/home/home-background.jpg');
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  left: 0;
+  top: -150px;
+  background-position: center;
+  /* Make the background image cover the area of the <div>, and clip the excess */
+  background-size: cover;
+}
+
+.Container {
+  position: relative;
+  top: 0;
+  display: block;
+  height: 1000px;
+  width: 50%;
+  overflow: hidden;
+  color: #fff;
+}
+
+.Container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-image:  linear-gradient(rgba(20, 33, 61, 1) 10%, rgba(20, 33, 61, 0));
+  -webkit-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  transform-origin: right bottom;
+  -webkit-transform: skew(15deg);
+  -ms-transform: skew(15deg);
+  transform: skew(15deg);
+  z-index: -1;
+}
+
+.TextContainer {
+  position: relative;
+  top: 20%;
+  height: 30%;
+  margin-left: 5%;
+  margin-right: 20%;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: medium;
+  line-height: 40px;
+}
+
+.Title {
+  letter-spacing: 10px;
+  font-weight: bold;
+  font-size: xx-large;
+  margin-bottom: 20px;
+}
+
+@media(max-width: 900px) {
+  .Container {
+    width: 70%;
+  }
+}
+
+@media(max-width: 750px) {
+  .Background {
+    height: 700px;
+  }
+}
+
+@media(max-width: 700px) {
+  .Container {
+    width: 100%;
+    height: 500px;
+  }
+  .Background {
+    display: none;
+  }
+}

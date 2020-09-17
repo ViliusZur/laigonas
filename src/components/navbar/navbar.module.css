@@ -1,9 +1,35 @@
 .Container {
+  z-index: 1;
   width: 100%;
+  height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-  background-image: linear-gradient(to right, #14213d 15%, white);
+  background-image: linear-gradient(to right, rgba(20, 33, 61, 1) 40%, rgba(20, 33, 61, 0));
+  animation: unfillNav 1s ease-in;
+  animation-fill-mode: forwards;
+}
+
+.Fixed {
+  animation: fillNav 1s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fillNav {
+  to {
+    background-color: #14213d;
+  }
+}
+
+@keyframes unfillNav {
+  from {
+    background-color: #14213d;
+  }
+  to {
+    background-color: transparent;
+  }
 }
 
 /* Logo and home button */
@@ -22,7 +48,7 @@
   color: white;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 5px;
+  letter-spacing: 10px;
 }
 
 /* Buttons to other parts of the page */
@@ -40,7 +66,7 @@
 }
 
 .ButtonGroup a {
-  color: #14213d;
+  color: white;
   text-transform: uppercase;
   text-decoration: none;
   position: relative;
@@ -54,7 +80,7 @@
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #14213d;
+  background: white;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -64,24 +90,10 @@
   left: 0; 
 }
 
-@media(max-width: 1200px) {
-  .ButtonGroup {
-    margin-left: 60%;
-    width: 38%;
-  }
-}
-
-@media(max-width: 900px) {
-  .ButtonGroup {
-    margin-left: 50%;
-    width: 48%;
-  }
-}
-
 /* Dropdown menu for the buttons */
 /* The container <div> - needed to position the dropdown content */
 .Dropdown {
-  margin-left: 90%;
+  margin-left: 88%;
   width: 10%;
   position: relative;
   display: none;
@@ -91,8 +103,8 @@
 .DropButton {
   width: 100%;
   height: 35px;
-  background-color:#14213d;
-  color: white;
+  background-color: transparent;
+  color:white;
   outline: none;
   border: none;
   cursor: pointer;
@@ -111,7 +123,7 @@
 
 /* Links inside the dropdown */
 .DropdownContent a {
-  color: black;
+  color: #14213d;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -126,6 +138,21 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .DropButton { background-color: #3e8e41; }
 
+/* Responsiveness */
+@media(max-width: 1200px) {
+  .ButtonGroup {
+    margin-left: 60%;
+    width: 38%;
+  }
+}
+
+@media(max-width: 900px) {
+  .ButtonGroup {
+    margin-left: 50%;
+    width: 48%;
+  }
+}
+
 @media(max-width: 750px) {
   .Logo {
     padding: 1%;
@@ -137,6 +164,12 @@
   .Dropdown {
     position: relative;
     display: inline-block;
+  }
+}
+
+@media(max-width: 700px) {
+  .DropButton {
+    color:  #14213d;
   }
 }
 
