@@ -35,7 +35,7 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <>
-      <div className={this.state.top ? styles.Container : cn(styles.Container, styles.Fixed)}>
+      <div className={this.state.top ? styles.Container : cn(styles.Container, styles.fixed)}>
         <div className={styles.Logo}>
           <a href='#Home'>Laigonas</a>
         </div>

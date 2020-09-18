@@ -1,84 +1,160 @@
 .BackgroundContainer {
-  z-index: -2;
   position: relative;
+  z-index: -1;
 }
 
 .Background {
-  background-image: linear-gradient(rgba(20, 33, 61, 0.2) 85%, rgba(255, 255, 255, 1)), url('/images/home/home-background.jpg');
-  width: 100%;
-  height: 800px;
   position: absolute;
-  left: 0;
-  top: -150px;
+  top: -100px;
+  background-image: linear-gradient(rgba(20, 33, 61, 0.2) 95%,white), url('/images/home/home-background-small-bottom.jpg');
   background-position: center;
-  /* Make the background image cover the area of the <div>, and clip the excess */
   background-size: cover;
+  width: 100%;
+  height: 400px;
 }
 
 .Container {
   position: relative;
-  top: 0;
-  display: block;
-  height: 1000px;
-  width: 50%;
-  overflow: hidden;
-  color: #fff;
+  top: 250px;
+  width: 100%;
+  height: 125px;
 }
 
-.Container:after {
+.Overlay {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(252, 163, 17, 0.8);
+  clip-path: polygon(
+    0 0, /* left top */
+    100% 6vw, /* right top */ 
+    100% 100%, /* right bottom */
+    0 100% /* left bottom */
+  );
+}
+
+.Overlay::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70%;
-  background-image:  linear-gradient(rgba(20, 33, 61, 1) 10%, rgba(20, 33, 61, 0));
-  -webkit-transform-origin: right bottom;
-  -ms-transform-origin: right bottom;
-  transform-origin: right bottom;
-  -webkit-transform: skew(15deg);
-  -ms-transform: skew(15deg);
-  transform: skew(15deg);
-  z-index: -1;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(20, 33, 61, 1);
+  clip-path: polygon(
+    0 0, /* left top */
+    100% 5vw, /* right top */ 
+    100% calc(100% - 5vw), /* right bottom */
+    0 100% /* left bottom */
+  );
 }
 
 .TextContainer {
-  position: relative;
-  top: 20%;
-  height: 30%;
-  margin-left: 5%;
-  margin-right: 20%;
-  text-align: left;
-  text-transform: uppercase;
-  font-size: medium;
-  line-height: 40px;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  left: 20px;
+  bottom: 20px;
 }
 
 .Title {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
   letter-spacing: 10px;
-  font-weight: bold;
-  font-size: xx-large;
   margin-bottom: 20px;
 }
 
-@media(max-width: 900px) {
+.Text {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+@media(min-width: 550px) {
+  .Background {
+    height: 500px;
+  }
   .Container {
-    width: 70%;
+    top: 350px;
+    height: 200px;
+  }
+  .Overlay {
+    clip-path: polygon(
+      0 0, /* left top */
+      100% 0, /* right top */ 
+      100% 100%, /* right bottom */
+      0 100% /* left bottom */
+    );
+  }
+  .Overlay::before {
+    clip-path: polygon(
+      0 0, /* left top */
+      100% 0, /* right top */ 
+      100% calc(100% - 5vw), /* right bottom */
+      0 100% /* left bottom */
+    );
+  }
+  .TextContainer {
+    top: 45px;
   }
 }
 
-@media(max-width: 750px) {
+@media(min-width: 900px) {
   .Background {
+    height: 600px;
+  }
+  .Container {
+    top: 450px;
+  }
+  .Overlay::before {
+    clip-path: polygon(
+    0 0, /* left top */
+    100% 0, /* right top */ 
+    100% calc(100% - 4vw), /* right bottom */
+    0 100% /* left bottom */
+  );
+  }
+}
+
+@media(min-width: 1000px) {
+  .Background {
+    background-image: linear-gradient(rgba(20, 33, 61, 0.2) 100%, rgba(255, 255, 255, 1)), url('/images/home/home-background-small-bottom.jpg');
+    border-bottom: solid 20px  rgba(20, 33, 61, 1);
+  }
+  .Container {
+    width: 40%;
+    height: 300px;
+    top: -10px;
+  }
+  .Overlay {
+    width: 100%;
+    height: 320px;
+    clip-path: polygon(
+      0 0, /* left top */
+      100% 0, /* right top */ 
+      100% calc(100% - 6vw), /* right bottom */
+      0 100% /* left bottom */
+    );
+  }
+  .Overlay::before {
+    width: 100%;
+    height: 300px;
+  }
+  .TextContainer {
+    top: 80px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .Background {
+    top: -200px;
     height: 700px;
   }
 }
 
-@media(max-width: 700px) {
-  .Container {
-    width: 100%;
-    height: 500px;
-  }
+@media(min-width: 1600px) {
   .Background {
-    display: none;
+    top: -300px;
+    height: 900px;
   }
 }

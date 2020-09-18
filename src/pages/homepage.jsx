@@ -1,8 +1,8 @@
 import React from 'react';
 
 //import components
-import Navbar from '../components/navbar';
-import Home from '../components/home';
+import Navbar from '../components/Navbar';
+import Home from '../components/Home';
 
 export default class Homepage extends React.Component {
 
@@ -12,9 +12,8 @@ export default class Homepage extends React.Component {
         <Navbar />
         <Home 
           title='laigonas' 
-          body='kazkoks sukis kazkoks sukis kazkoks sukis. implementuoti cms ir paimti suki is cms! Realiai turetu buti trumpas About cia.'
+          body='Laigono sukis'
         />
-        Nice
       </>
     );
   }
