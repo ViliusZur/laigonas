@@ -143,12 +143,29 @@
   .TextContainer {
     top: 80px;
   }
+  .Title {
+    font-size: 64px;
+    
+  }
+  .Text {
+    font-size: 32px;
+  }
 }
 
 @media(min-width: 1200px) {
   .Background {
     top: -200px;
     height: 700px;
+  }
+  .TextContainer {
+    top: 50px;
+  }
+  .Title {
+    font-size: 64px;
+    letter-spacing: 20px;
+  }
+  .Text {
+    font-size: 32px;
   }
 }
 
