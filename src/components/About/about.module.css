@@ -1,0 +1,52 @@
+.Container {
+  position: relative;
+}
+
+.Grid {
+  width: 100%;
+  position: absolute;
+  top: 250px;
+  margin: 20px 0;
+
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 50px 20px auto;
+  grid-template-areas: 
+    '. title .'
+    '. . .'
+    '. text .';
+}
+
+
+.Title {
+  grid-area: title;
+  place-self: center;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: bold;
+}
+
+.Text {
+  grid-area: text;
+  place-self: center;
+  text-align: justify;
+}
+
+@media(min-width: 550px) {
+  .Grid {
+    top: 350px;
+  }
+}
+
+@media(min-width: 900px) {
+  .Grid {
+    top: 450px;
+
+  }
+}
+
+@media(min-width: 1000px) {
+  .Grid {
+    top: 225px;
+  }
+}

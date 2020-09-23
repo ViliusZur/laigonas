@@ -16,7 +16,7 @@ export default class Navbar extends React.Component {
   componentDidMount() {
     this.listener = document.addEventListener('scroll', e => {
       let scrolled = document.scrollingElement.scrollTop;
-      if(scrolled >= 50) {
+      if(scrolled >= 20) {
         if(this.state.top !== false) {
           this.setState({ top: false });
         }
@@ -41,11 +41,11 @@ export default class Navbar extends React.Component {
         </div>
 
         <div className={styles.ButtonGroup}>
-          <button><a href='#About'>About</a></button>
-          <button><a href='#Mission'>Mission</a></button>
-          <button><a href='#Fleet'>Fleet</a></button>
-          <button><a href='#Team'>Team</a></button>
-          <button><a href='#Contacts'>Contact</a></button>
+          <button><a href='#About'>apie mus</a></button>
+          <button><a href='#Services'>paslaugos</a></button>
+          <button><a href='#Team'>komanda</a></button>
+          <button><a href='#Career'>karjera</a></button>
+          <button><a href='#Contacts'>kontaktai</a></button>
         </div>
 
         <div className={styles.Dropdown}>

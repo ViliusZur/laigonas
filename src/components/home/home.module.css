@@ -6,7 +6,7 @@
 .Background {
   position: absolute;
   top: -100px;
-  background-image: linear-gradient(rgba(20, 33, 61, 0.2) 95%,white), url('/images/home/home-background-small-bottom.jpg');
+  background-image: linear-gradient(rgba(20, 33, 61, 0.2) 95%,white), url('/images/home/background-mercedes.jpeg');
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -76,7 +76,7 @@
   }
   .Container {
     top: 350px;
-    height: 200px;
+    height: 150px;
   }
   .Overlay {
     clip-path: polygon(
@@ -95,7 +95,7 @@
     );
   }
   .TextContainer {
-    top: 45px;
+    top: 35px;
   }
 }
 
@@ -118,11 +118,11 @@
 
 @media(min-width: 1000px) {
   .Background {
-    background-image: linear-gradient(rgba(20, 33, 61, 0.2) 100%, rgba(255, 255, 255, 1)), url('/images/home/home-background-small-bottom.jpg');
+    background-image: linear-gradient(rgba(20, 33, 61, 0.2) 100%, white), url('/images/home/background-mercedes.jpeg');
     border-bottom: solid 20px  rgba(20, 33, 61, 1);
   }
   .Container {
-    width: 40%;
+    width: 35%;
     height: 300px;
     top: -10px;
   }
