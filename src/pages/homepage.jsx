@@ -1,9 +1,9 @@
 import React from 'react';
 
 //import components
-import Navbar from '../components/Navbar/';
-import Home from '../components/Home/';
-import About from '../components/About/';
+import Navbar from '../components/Navbar/navbar';
+import Home from '../components/Home/home';
+import About from '../components/About/about';
 
 export default class Homepage extends React.Component {
 
